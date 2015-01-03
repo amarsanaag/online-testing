@@ -1,0 +1,64 @@
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+          <form class="form-horizontal" name="registration" ng-controller="RegistrationCtrl" ng-submit="submit()" method="post">
+        <fieldset>
+
+        <!-- Form Name -->
+        <legend><h3 class="m_1">Бүртгүүлэх</h3></legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="lastname">Овог</label>  
+          <div class="col-md-4">
+          <input id="lastname" name="lastname" ng-model="lastname" type="text" placeholder="Овог нэр" class="form-control input-md" required="">
+          <small class="help-block">Монгол хүний эцэг эхийн нэр</small>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="firstname">Нэр</label>  
+          <div class="col-md-4">
+          <input id="firstname" name="firstname" ng-model="firstname" type="text" placeholder="Өөрийн нэр" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="email">Цахим шуудан</label>  
+          <div class="col-md-4">
+          <input id="email" name="email" ng-model="email" type="text" placeholder="И-мэйл хаяг" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="username">Хэрэглэгчийн нэр</label>  
+          <div class="col-md-4">
+          <input id="username" name="username" ng-model="username" type="text" placeholder="Системд нэвтрэх нэр" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="password">Нууц үг</label>
+          <div class="col-md-4">
+            <input id="password" name="password" ng-model="password" type="password" placeholder="" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="submit"></label>
+          <div class="col-md-4">
+            <button id="submit" name="submit" class="btn btn-primary">Бүртгүүлэх</button>
+          </div>
+        </div>
+
+        </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
