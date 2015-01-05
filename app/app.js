@@ -27,15 +27,14 @@ angular.module('myApp', [
     })
     .otherwise({redirectTo: '/home'});
 }])
-.factory('TaoService',
+.service('TaoService',
     ['$http', '$rootScope', 'authtoken', 'taohost',
     function ($http, $rootScope, authtoken, taohost ) {
-        var service = {};
-        service.getTaoGroups = function() {
+        this.getTaoGroups = function() {
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authtoken;
             $http.get(taohost+'/taoGroups/RestGroups')
                     .success(function(response){
-                        return response;
+                        console.log(response);
                     });
         };
         /*$http.defaults.headers.common['Authorization'] = 'Basic ' + authtoken;
@@ -47,5 +46,4 @@ angular.module('myApp', [
                   .success(function(response){
                       console.log(response);
                   });*/
-        return service;
 }]);
