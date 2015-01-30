@@ -1,0 +1,42 @@
+<div class="content_white" ng-controller="ResultCtrl">
+  <div ng-hide="infoText">
+  <h2>Хэрэглэгчийн нэр:</h2>
+  <div class="col-md-2 col-md-offset-5">
+      <form class="form-horizontal" name="result" ng-submit="viewResult()" method="post">
+          <input id="username" name="username" ng-model="username" ng-change="resultNotFound=false;errorText=''" type="text" class="form-control input-lg" required="">
+          <small class="help-block">Зөвхөн латин үсгээр бичнэ.</small>
+          
+          <button id="submit" name="submit" class="feature_btn">Дүнгээ харах</button>
+      </form>
+  </div>
+  </div>
+    
+  <div class="col-md-4 col-md-offset-4">
+      <br>
+      
+      <div ng-show="errorText" class="alert alert-danger" role="alert"><strong>Алдаа!</strong> {{errorText}}</div>
+      <div ng-show="resultNotFound" class="alert alert-warning" role="alert"><strong>Санамж!</strong> <em>{{username}}</em> хэрэглэгч шалгалт өгөөгүй байна.</div>
+      
+      <div ng-show="infoText">
+      <h2>Шалгалтын дүн: <strong>{{username}}</strong></h2>
+            
+            <table class="table table-condensed">
+                <tr>
+                    <th>№</th>
+                    <th>Шалгалтын нэр</th>
+                    <th>Оноо</th>
+                </tr>
+                <tr ng-repeat="exam in exams">
+                    <td>{{$index + 1}}</td>
+                    <td>{{exam.title}}</td>
+                    <td>{{exam.score}}</td>
+                </tr>
+            </table>
+            <a href="#/home" class="feature_btn">Буцах</a>
+      </div>
+  </div>
+  
+</div>
+
+
+  

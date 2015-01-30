@@ -2,12 +2,13 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
+  'angular-loading-bar',
   'ngRoute',
   'myApp.registration',
-  'myApp.view2',
+  'myApp.result',
   'myApp.version'
 ])
-.value('taohost', 'http://localhost/tao26')
+.value('taohost', 'http://10.0.33.103/tao26'/*'http://localhost/tao26'*/)
 .value('authtoken', 'YWRtaW46YWRtaW4=')
 .filter('webconfig', ['taohost', function(taohost) {
   return function(text) {
@@ -37,13 +38,5 @@ angular.module('myApp', [
                         console.log(response);
                     });
         };
-        /*$http.defaults.headers.common['Authorization'] = 'Basic ' + authtoken;
-          $http.defaults.headers.common['label'] = $scope.firstname+' '+$scope.lastname;
-          $http.defaults.headers.common['mail'] = $scope.email;
-          $http.defaults.headers.common['login'] = $scope.username;
-          $http.defaults.headers.common['password'] = $scope.password;
-          $http.post(taohost+'/taoSubjects/RestSubjects')
-                  .success(function(response){
-                      console.log(response);
-                  });*/
+        
 }]);

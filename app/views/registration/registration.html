@@ -1,9 +1,9 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-md-12">
-          <form class="form-horizontal" name="registration" ng-controller="RegistrationCtrl" ng-submit="submit()" method="post">
-        <fieldset>
-
+          <form class="form-horizontal" name="registration" ng-controller="RegistrationCtrl" ng-submit="createTestTaker()" method="post">
+              <fieldset>
+              
         <!-- Form Name -->
         <legend><h3 class="m_1">Бүртгүүлэх</h3></legend>
 
@@ -11,8 +11,8 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="lastname">Овог</label>  
           <div class="col-md-4">
-          <input id="lastname" name="lastname" ng-model="lastname" type="text" placeholder="Овог нэр" class="form-control input-md" required="">
-          <small class="help-block">Монгол хүний эцэг эхийн нэр</small>
+          <input id="lastname" name="lastname" ng-model="lastname" type="text" placeholder="Овог нэр" class="form-control input-md" required="" minlength="2">
+          <small class="help-block">Монгол хүний хувьд эцэг эхийн нэр</small>
           </div>
         </div>
 
@@ -20,7 +20,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="firstname">Нэр</label>  
           <div class="col-md-4">
-          <input id="firstname" name="firstname" ng-model="firstname" type="text" placeholder="Өөрийн нэр" class="form-control input-md" required="">
+          <input id="firstname" name="firstname" ng-model="firstname" type="text" placeholder="Өөрийн нэр" class="form-control input-md" required="" minlength="2">
           </div>
         </div>
 
@@ -28,7 +28,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="email">Цахим шуудан</label>  
           <div class="col-md-4">
-          <input id="email" name="email" ng-model="email" type="text" placeholder="И-мэйл хаяг" class="form-control input-md" required="">
+          <input id="email" name="email" ng-model="email" type="email" placeholder="И-мэйл хаяг" class="form-control input-md" required="">
           </div>
         </div>
 
@@ -47,12 +47,19 @@
             <input id="password" name="password" ng-model="password" type="password" placeholder="" class="form-control input-md" required="">
           </div>
         </div>
-
+        
+        <div class="form-group" ng-show="errorText">
+            <div class="alert alert-danger col-md-6 col-md-offset-3" role="alert"><strong>Алдаа!</strong> {{errorText}}</div>
+        </div>
+        <div class="form-group" ng-show="infoText">
+            <div class="alert alert-success col-md-6 col-md-offset-3" role="alert"><strong>Амжилттай!</strong> {{infoText}}</div>
+        </div>
+       
         <!-- Button -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="submit"></label>
           <div class="col-md-4">
-            <button id="submit" name="submit" class="btn btn-primary">Бүртгүүлэх</button>
+              <button id="submit" name="submit" ng-hide="infoText" class="feature_btn">Бүртгүүлэх</button>
           </div>
         </div>
 
